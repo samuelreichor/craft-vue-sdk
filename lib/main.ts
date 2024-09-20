@@ -1,4 +1,2 @@
-import CraftArea from './CraftArea.vue'
-import CraftPage from './CraftPage.vue'
-
-export {CraftArea, CraftPage}
+export { default as CraftPage } from "./CraftPage.vue";
+export { default as CraftArea } from "./CraftArea.vue";

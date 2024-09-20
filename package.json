@@ -1,16 +1,18 @@
 {
   "name": "craft-vue-sdk",
-  "private": true,
-  "version": "0.0.0",
+  "version": "1.0.2",
   "type": "module",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "main": "./dist/craft-vue-sdk.umd.cjs",
   "module": "./dist/craft-vue-sdk.js",
   "types": "./dist/main.d.ts",
   "exports": {
     ".": {
       "import": "./dist/craft-vue-sdk.js",
-      "require": "./dist/craft-vue-sdk.umd.js"
+      "require": "./dist/craft-vue-sdk.umd.js",
+      "types": "./dist/main.d.ts"
     }
   },
   "scripts": {
@@ -26,6 +28,20 @@
     "@vitejs/plugin-vue": "^5.1.2",
     "typescript": "^5.5.3",
     "vite": "^5.4.1",
+    "vite-plugin-dts": "^4.2.1",
     "vue-tsc": "^2.0.29"
-  }
+  },
+  "keywords": [
+    "craftcms",
+    "vue",
+    "vuejs",
+    "cms-integration",
+    "headless-cms",
+    "vue-sdk",
+    "craft-cms-plugin",
+    "craft-cms-helper",
+    "vue-plugin",
+    "craft-node-transformer",
+    "craft-vue-sdk"
+  ]
 }
