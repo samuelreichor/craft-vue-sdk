@@ -37,7 +37,8 @@
 
     const pageComponent = props.config.pages[currentSectionHandle];
     if (!pageComponent) {
-      throw new Error(`No page found for section handle: ${currentSectionHandle}`);
+      console.error(`No mapped page found for page handle: ${currentSectionHandle}`);
+      return null;
     }
 
     return pageComponent;

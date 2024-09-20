@@ -24,10 +24,11 @@
     }
 
     const cName = component.type;
-
+    
     const componentEl = config.components[cName];
     if (!componentEl) {
-      throw new Error(`No page found for section handle: ${componentEl}`);
+      console.error(`No mapped component found for component type: ${cName}`);
+      return null;
     }
 
     return componentEl
