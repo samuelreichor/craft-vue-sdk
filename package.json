@@ -18,7 +18,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && vue-tsc --emitDeclarationOnly",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test:unit": "vitest"
   },
   "dependencies": {
     "vue": "^3.4.37"
@@ -29,6 +30,7 @@
     "typescript": "^5.5.3",
     "vite": "^5.4.1",
     "vite-plugin-dts": "^4.2.1",
+    "vitest": "^2.1.2",
     "vue-tsc": "^2.0.29"
   },
   "keywords": [
