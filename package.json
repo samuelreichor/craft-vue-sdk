@@ -1,6 +1,9 @@
 {
   "name": "craft-vue-sdk",
-  "version": "1.0.5",
+  "version": "1.1.0",
+  "license": "MIT",
+  "repository": "github:samuelreichor/craft-vue-sdk",
+  "description": "Vue.js SDK for Craft CMS",
   "type": "module",
   "files": [
     "dist"
@@ -19,7 +22,9 @@
     "dev": "vite",
     "build": "vite build && vue-tsc --emitDeclarationOnly",
     "preview": "vite preview",
-    "test:unit": "vitest"
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "release": "npm run test && npm run build && npx changelogen --release && npm publish && git push --follow-tags"
   },
   "dependencies": {
     "vue": "^3.4.37"
