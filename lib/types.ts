@@ -8,3 +8,9 @@ export type Config = {
       [key: string]: Record<string, DefineComponent>,
     }
   }
+
+export type CraftSdkOptions = {
+  baseUrl: string
+  registerComponents?: boolean
+  debug?: boolean
+}

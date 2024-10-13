@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-  import type { Config } from './types'
+  import type { Config } from '../types'
   import { provide, PropType } from 'vue'
 
   const props = defineProps({
