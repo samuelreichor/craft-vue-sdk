@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-  import type { Config } from './types'
+  import type { Config } from '../types'
   import { inject } from 'vue'
   const props = defineProps({
     content: {
