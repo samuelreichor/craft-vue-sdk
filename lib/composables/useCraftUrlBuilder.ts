@@ -15,6 +15,7 @@ export interface CommonQueryParams {
   status?: string;
   offset?: number;
   orderBy?: string;
+  fields?: string | string[];
 }
 
 // Specific query parameters for each element type
@@ -62,6 +63,7 @@ export interface CommonQueryBuilder {
   status: (status: string) => this;
   offset: (offset: number) => this;
   orderBy: (orderBy: string) => this;
+  fields: (fields: string | string[]) => this;
   buildUrl: (value: ExecutionMethods) => string;
 }
 
@@ -142,6 +144,10 @@ export function useCraftUrlBuilder<T extends ElementType>(
       params.value.orderBy = orderBy;
       return this;
     },
+    fields(fields) {
+      params.value.fields = fields;
+      return this;
+    },
     buildUrl(value) {
       if (value === 'all') {
         params.value.one = undefined;
@@ -150,6 +156,8 @@ export function useCraftUrlBuilder<T extends ElementType>(
         params.value.one = '1';
         params.value.all = undefined
       }
+
+      /* TODO: add more error handling */
       const queryParams = Object.fromEntries(
         Object.entries(params.value)
           .filter(([_, value]) => value !== undefined && value !== null && value != '')

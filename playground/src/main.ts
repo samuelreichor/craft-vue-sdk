@@ -5,6 +5,6 @@ import App from './App.vue'
 
 const app = createApp(App)
 
-app.use(CraftSdk, { baseUrl: 'http://127.0.0.1:55003', debug: true, registerComponents: true })
+app.use(CraftSdk, { baseUrl: 'https://backend-craftcms.ddev.site', debug: true, registerComponents: true })
 
 app.mount('#app') 

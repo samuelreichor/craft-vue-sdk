@@ -15,13 +15,14 @@ describe('useQueryBuilder Tests', () => {
       .status('active')
       .offset(2)
       .orderBy('name')
+      .fields(['title', 'heroImage'])
       
       arrOfExecutionTypes.forEach(executionType => {
         it(`Should execute all commonQueryBuilder functions for ${elementType} with ${executionType}()`, async () => {
           const queryUrlOne = baseQuery.buildUrl(executionType);
     
           expect(queryUrlOne).toContain(
-            `elementType=${elementType}&id=1&limit=5&status=active&offset=2&orderBy=name&${executionType}=1`,
+            `elementType=${elementType}&id=1&limit=5&status=active&offset=2&orderBy=name&fields=title%2CheroImage&${executionType}=1`,
           );
         });
       });

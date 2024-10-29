@@ -18,7 +18,7 @@ import App from './App.vue'
 const app = createApp(App)
 
 app.use(CraftSdk, { 
-  baseUrl: 'http://127.0.0.1:55003', 
+  baseUrl: 'https://backend-craftcms.ddev.site', 
   debug: false, 
   registerComponents: true 
 })
@@ -487,5 +487,19 @@ const queryUrl = useCraftUrlBuilder('users')
   .email('admin@test.com')
   .fullName('Admin User')
   .hasPhoto(true)
+  .buildUrl('all');
+```
+
+### Get Data of Specific Fields in a Query
+There is a `.fields()` function, where you can input field handles. Then you will receive only that data of that fields. 
+
+> **Note:** This is not part of the native craft cms query builder.
+
+#### Example:
+```javascript
+const queryUrl = useCraftUrlBuilder('entries')
+  .limit(5)
+  .section('news')
+  .fields(['titleHandle', 'imageHandle'])
   .buildUrl('all');
 ```
